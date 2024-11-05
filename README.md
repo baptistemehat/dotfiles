@@ -35,6 +35,12 @@ just --list   # list all recipes
 1) Intall environment
 `just full-env`
 
+## Post-Install
+- create ssh key for github
+```
+ssh-keygen -t ed25519
+```
+
 
 
 
