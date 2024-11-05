@@ -32,7 +32,29 @@ just --list   # list all recipes
 * `dev-env`: 
 * `full-env`: 
 
+1) Intall environment
+`just full-env`
+
+
+
+
 ## Additional configuration
+
+### Wifi
+```
+sudo wpa_cli
+> scan
+> scan_results
+> add_network
+> set_network <x> ssid "MYSSID"
+> set_network <x> key_mgmt NONE #only for public zifi
+> set_network <x> psk "PSK" #only for networks connected through a password
+```
+
+#### Captive portal
+Sometimes the network is accessed through a captive portal (the network itself is public but it requires login in a browser)
+Firefox should detect automatically and forwards you automatically to the login page
+If it is not the case, you can try to go to http://detectportal.firefox.com/canonical.html
 
 ### Bluetooth
 Configuration of my bluetooth keyboard (Logitech MX keys mini)
