@@ -1,0 +1,21 @@
+[color]
+	ui = always
+[core]
+	editor = vim
+[format]
+	pretty = oneline
+[init]
+	defaultBranch = main
+[log]
+	decorate = short
+	abbrevCommit = true
+[merge]
+    conflictstyle = diff3
+[pager]
+    log=false
+[status]
+    short = true
+
+# include private gitconfig such as user config
+[include]
+    path = ~/.config/git/.gitconfig

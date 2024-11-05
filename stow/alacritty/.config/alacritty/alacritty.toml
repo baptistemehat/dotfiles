@@ -1,0 +1,15 @@
+live_config_reload = true
+
+[window]
+decorations = "None"
+opacity = 0.85
+blur = true
+
+
+[font]
+size = 9.0
+# normal = { family = "UbuntuMono Nerd Font Mono", style = "Regular" }
+offset = { x = 0, y = 2 }
+
+[colors.primary]
+background = "#000000"

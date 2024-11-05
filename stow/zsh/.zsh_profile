@@ -1,0 +1,23 @@
+# nvim aliases
+alias 'v'=nvim
+
+
+export GOPATH=$HOME/go
+export PATH=$PATH:~/go/bin
+
+# add .local/bin for watson time tracker
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+
+ferris () {
+    echo "[Ferris] Starting http server for rust documentation..." 
+
+    pushd ~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust > /dev/null
+    python3 -m http.server &
+    
+    echo -e "Done\n"
+}
