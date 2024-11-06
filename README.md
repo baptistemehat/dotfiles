@@ -40,6 +40,15 @@ just --list   # list all recipes
 ```
 ssh-keygen -t ed25519
 ```
+- Add to github account
+- Change remote-url of git dotfiles repo
+```git remote set-url origin git```
+- Create ssh config file
+```
+Host github.com
+  User git
+  IdentityFile ~/.ssh/github
+```
 
 
 
@@ -56,6 +65,31 @@ sudo wpa_cli
 > set_network <x> key_mgmt NONE #only for public zifi
 > set_network <x> psk "PSK" #only for networks connected through a password
 ```
+
+
+if Cannot connect to wpa_supplicant error:
+... TODO
+
+if no IP address, run dhcpcd:
+```
+sudo dhcpcd
+```
+
+
+**For wifi using PEAP**
+```
+sudo wpa_cli
+> scan
+> scan_results
+> add_network
+> set_network <x> ssid "MYSSID"
+> set_network <x> key_mgmt WPA-EAP
+> set_network <x> eap PEAP
+> set_network <x> identity "username"
+> set_network <x> password "password"
+
+```
+
 
 #### Captive portal
 Sometimes the network is accessed through a captive portal (the network itself is public but it requires login in a browser)
