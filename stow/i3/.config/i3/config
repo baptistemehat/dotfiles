@@ -12,6 +12,7 @@ exec_always --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 # exec_always polybar --config=.config/polybar/config.ini toph  
+exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # mod key configuration for X
 exec_always setxkbmap -layout us -variant altgr-intl
@@ -72,10 +73,14 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+Q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
+
+# this enables dmenu to also list .desktop files intended for GNOME
+bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -219,11 +224,13 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 exec_always feh --bg-fill ~/private-dotfiles/wallpaper.jpg
 bindsym $mod+x exec ~/.config/i3/scripts/lock.sh
 
-assign [class="floorp"] 1
+assign [class="firefox"] 1
+assign [class="element"] 4
 assign [class="spotify"] 5
-exec --no-startup-id i3-msg 'workspace 1; exec floorp'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e tmux'
-exec --no-startup-id i3-msg 'workspace 5; exec spotify
+exec --no-startup-id i3-msg 'workspace 3; exec element-desktop'
+exec --no-startup-id i3-msg 'workspace 5; exec spotify'
 
 
 
