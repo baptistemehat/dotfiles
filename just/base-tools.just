@@ -23,7 +23,7 @@ i3: cmake xorg (configure "i3" "picom" "polybar") mktmpdir && rmtmpdir
 	#!/usr/bin/env bash
 	set -euxo pipefail
 
-	sudo apt install -y i3-wm polybar feh psmisc dmenu
+	sudo apt install -y i3-wm polybar feh psmisc dmenu dunst
 
 	# -- PICOM --
 	git clone https://github.com/yshui/picom.git {{tmpdir}}/picom
