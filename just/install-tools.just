@@ -32,18 +32,19 @@ git: (configure "git")
 	sudo apt install -y git
 
 # install nvm: node version manager providing nodejs and npm
-[private]
+# [private]
 nvm:
     #!/usr/bin/env bash
     set -euxo pipefail
 
+    unset NVM_DIR
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
     source $HOME/.bashrc
-    mkdir $HOME/.nvm -p
 
-    export NVM_DIR="$HOME/.nvm"
+    export NVM_DIR="$HOME/.config/nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
     nvm install node
 
 # install python-venv: python virtual environment
