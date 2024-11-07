@@ -10,7 +10,7 @@ import "base-tools.just"
 
 # main recipe of this justfile
 [private]
-dev-tools: update alacritty zsh nvim tmux
+dev-tools: update alacritty fzf zsh nvim tmux
 
 # install alacritty: terminal emulator
 [private]
@@ -31,6 +31,11 @@ alacritty: rustup (configure "alacritty") mktmpdir && rmtmpdir
     sudo cp target/release/alacritty /usr/local/bin
 
     popd
+
+
+[private]
+fzf:
+	sudo apt install -y fzf
 
 # list of dependencies for the treesitter nvim plugin
 [private]
