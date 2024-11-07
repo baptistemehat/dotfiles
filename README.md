@@ -50,7 +50,11 @@ Host github.com
   IdentityFile ~/.ssh/github
 ```
 
-
+- Get Keepass DB
+- Get Keepass Keyfile
+- Configure Keepassxc
+- Firefox/Floorp Account
+- Install private dotfiles 
 
 
 ## Additional configuration
@@ -68,7 +72,11 @@ sudo wpa_cli
 
 
 if Cannot connect to wpa_supplicant error:
-... TODO
+TODO: write config file
+```
+sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
 
 if no IP address, run dhcpcd:
 ```
