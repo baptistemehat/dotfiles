@@ -1,2 +1,3 @@
+stow/nvim/.config/nvim/plugin
 stow/tmux/.config/tmux/plugins
 stow/tmux/.config/tmux/resurrect
