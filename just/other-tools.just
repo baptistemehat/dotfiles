@@ -6,7 +6,7 @@ import "install-tools.just"
 
 # install non-dev tools (web browser, podf viewer, etc.)
 [private]
-other-tools: update evince floorp gimp keepassxc spotify xplr 
+other-tools: update evince firefox gimp keepassxc spotify xplr 
 
 # install evince: pdf viewer
 [private]
@@ -39,9 +39,11 @@ floorp: xorg i3
 gimp:
 	sudo apt install -y gimp
 
+# install keepassxc
 [private]
 keepassxc:
 	sudo apt install -y keepassxc
+
 # install spotify: music service
 [private]
 spotify: curl
