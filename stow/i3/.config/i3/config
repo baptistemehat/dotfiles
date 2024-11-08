@@ -160,6 +160,7 @@ bindsym $mod+9 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+0 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
