@@ -32,7 +32,7 @@ alacritty: rustup (configure "alacritty") mktmpdir && rmtmpdir
 
     popd
 
-
+# install fzf: fuzzy finder
 [private]
 fzf:
 	sudo apt install -y fzf

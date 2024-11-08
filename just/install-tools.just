@@ -26,6 +26,11 @@ cmake:
 curl:
 	sudo apt install -y curl
 
+[private]
+flatpak: update
+	sudo apt install -y flatpak
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 # install git
 [private]
 git: (configure "git")

@@ -57,13 +57,6 @@ nerdfont: unzip (configure "fontconfig")
 	# provides support for emojis
 	sudo apt install  fonts-noto-color-emoji
 
-	wget -P ~/.local/share/fonts  https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
-	pushd ~/.local/share/fonts 
-	unzip UbuntuMono.zip 
-	rm UbuntuMono.zip 
-	fc-cache -fv
-	popd 
-
 # install pulseaudio: sound manager
 [private]
 pulseaudio:
