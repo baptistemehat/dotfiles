@@ -8,7 +8,7 @@ blur = true
 
 [font]
 size = 9.0
-# normal = { family = "UbuntuMono Nerd Font Mono", style = "Regular" }
+normal = { family = "monospace", style = "regular" }
 offset = { x = 0, y = 2 }
 
 [colors.primary]
