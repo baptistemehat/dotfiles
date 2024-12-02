@@ -7,5 +7,9 @@ vim.g.vimwiki_list = {
 	{ path = '~/vimwiki/inria',    syntax = 'markdown', ext = '.wiki' } -- second wiki, accessed with '2<leader>ww'
 }
 
--- enable to check chekboxes in wiki files
-vim.keymap.set("n", "<leader>wx", ":VimwikiToggleListItem<CR>")
+vim.g.vimwiki_auto_header = 1
+
+vim.api.nvim_create_autocmd({'BufNewFile'}, {
+    pattern = { "*diary/*.md" },
+    command = "0r! ~/.config/nvim/vimwiki-diary-template.py '%'",
+})

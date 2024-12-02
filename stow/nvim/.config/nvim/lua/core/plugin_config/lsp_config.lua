@@ -14,6 +14,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	-- List of language servers I want to be installed by default
 	ensure_installed = {
+		"ansiblels",
 		"bashls",
 		"clangd",
 		"cmake",
@@ -68,6 +69,10 @@ cmp.setup({
 
 -- LANGUAGE SERVER CONFIGURATIONS --
 --
+
+-- ANSIBLE
+lspconfig.ansible.setup {}
+
 -- BASH
 lspconfig.bashls.setup {}
 

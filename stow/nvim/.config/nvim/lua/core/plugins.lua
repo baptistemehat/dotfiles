@@ -104,6 +104,7 @@ return require('packer').startup(function(use)
 	-- VIMWIKI
 	-- Personal wiki
 	use 'vimwiki/vimwiki'
+	use 'mattn/calendar-vim'
 
 
 	-- GITSIGNS

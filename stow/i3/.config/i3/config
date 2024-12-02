@@ -239,11 +239,10 @@ assign [class="Mail"] "m"
 assign [class="element"] "n"
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e tmux'
-exec --no-startup-id i3-msg 'workspace 3; exec element-desktop'
-exec --no-startup-id i3-msg 'workspace 5; exec spotify'
-exec --no-startup-id i3-msg 'workspace k; exec keepassxc'
-exec --no-startup-id i3-msg 'workspace m; exec Thunderbird'
-exec --no-startup-id i3-msg 'workspace n; exec element-desktop'
+# exec --no-startup-id i3-msg 'workspace 5; exec spotify'
+# exec --no-startup-id i3-msg 'workspace k; exec keepassxc'
+# exec --no-startup-id i3-msg 'workspace m; exec Thunderbird'
+# exec --no-startup-id i3-msg 'workspace n; exec element-desktop'
 
 
 
