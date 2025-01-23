@@ -20,12 +20,15 @@ require("mason-lspconfig").setup({
 		"cmake",
 		"cssls",
 		"dockerls",
+		"jdtls",
 		-- "gopls",
 		"html",
 		"jsonls",
 		"lua_ls",
 		"marksman",
 		"pylsp",
+		-- "ruff",
+		"ruff_lsp",
 		"rust_analyzer",
 		"sqlls",
 		"ts_ls",
@@ -90,6 +93,9 @@ lspconfig.cssls.setup {}
 
 -- DOCKERFILE
 lspconfig.dockerls.setup {}
+
+-- JAVA
+lspconfig.jdtls.setup {}
 
 -- GO
 -- lspconfig.gopls.setup {}
