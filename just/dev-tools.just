@@ -10,7 +10,7 @@ import "base-tools.just"
 
 # main recipe of this justfile
 [private]
-dev-tools: update alacritty fzf glab zsh nvim tmux
+dev-tools: update alacritty fzf zsh nvim tmux
 
 # install alacritty: terminal emulator
 [private]
@@ -36,12 +36,6 @@ alacritty: rustup (configure "alacritty") mktmpdir && rmtmpdir
 [private]
 fzf:
 	sudo apt install -y fzf
-
-# install glab: gitlab cli
-[private]
-glab: go
-	go install gitlab.com/gitlab-org/cli/cmd/glab@main
-
 
 # list of dependencies for the treesitter nvim plugin
 [private]
@@ -75,7 +69,7 @@ upower:
     sudo apt install -y upower
 
 # install tmux: terminal multiplexer
-[private]
+# [private]
 tmux: git upower (configure "tmux")
     sudo apt install tmux -y
     git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm

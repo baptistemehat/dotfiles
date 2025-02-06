@@ -18,22 +18,6 @@ evince:
 firefox: xorg i3
 	sudo apt install -y firefox-esr
 
-# install floorp: firefox-based web browser
-[private]
-floorp: xorg i3
-	#!/usr/bin/env bash
-	set -euxo pipefail
-
-	pushd $HOME
- 
-	wget https://github.com/Floorp-Projects/Floorp/releases/download/v11.20.0/floorp-11.18.1.linux-x86_64.tar.bz2
-	tar xvf floorp-11.18.1.linux-x86_64.tar.bz2
-	rm floorp-11.18.1.linux-x86_64.tar.bz2
-	sudo mv floorp /usr/local/bin/floorp-app
-	sudo ln -s /usr/local/bin/floorp-app/floorp /usr/local/bin/floorp
-
-	popd
-
 # install gimp: image manipulator program
 [private]
 gimp:
