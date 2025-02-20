@@ -10,7 +10,7 @@ import "base-tools.just"
 
 # main recipe of this justfile
 [private]
-dev-tools: update alacritty fzf glab zsh nvim tmux
+dev-tools: update alacritty fzf zsh nvim tmux
 
 # install alacritty: terminal emulator
 [private]
@@ -59,7 +59,7 @@ nvim: git ripgrep nvim-treesitter-dependencies (configure "nvim") mktmpdir && rm
     sudo apt install -y ninja-build gettext cmake unzip curl build-essential
     # git checkout stable
     make CMAKE_BUILD_TYPE=RelWithDebInfo
-	cd build && cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
+    cd build && cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
 
     popd
 
