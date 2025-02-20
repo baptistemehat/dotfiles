@@ -35,7 +35,7 @@ spotify: curl
 	echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 	sudo apt -y update && sudo apt install spotify-client
 
-# [private]
+[private]
 thunderbird:
 	flatpak install flathub org.mozilla.Thunderbird
 

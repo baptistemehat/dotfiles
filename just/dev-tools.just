@@ -38,9 +38,9 @@ fzf:
 	sudo apt install -y fzf
 
 # install glab: gitlab cli
-[private]
-glab: go
-	go install gitlab.com/gitlab-org/cli/cmd/glab@main
+# [private]
+# glab: go
+# 	go install gitlab.com/gitlab-org/cli/cmd/glab@main
 
 
 # list of dependencies for the treesitter nvim plugin
