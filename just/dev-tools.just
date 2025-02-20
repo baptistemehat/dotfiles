@@ -59,7 +59,7 @@ nvim: git ripgrep nvim-treesitter-dependencies (configure "nvim") mktmpdir && rm
     sudo apt install -y ninja-build gettext cmake unzip curl build-essential
     # git checkout stable
     make CMAKE_BUILD_TYPE=RelWithDebInfo
-    cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+	cd build && cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
 
     popd
 
