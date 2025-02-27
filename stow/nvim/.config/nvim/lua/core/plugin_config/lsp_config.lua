@@ -159,6 +159,10 @@ lspconfig.ts_ls.setup {}
 lspconfig.yamlls.setup {}
 
 
+-- Enable filetype detection for custom java-based educational programming language
+-- used for teaching students: "Java's cool" language (.jvs extension)
+vim.filetype.add({ extension = { jvs = "java" } })
+
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
