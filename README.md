@@ -72,7 +72,14 @@ sudo wpa_cli
 
 
 if Cannot connect to wpa_supplicant error:
-TODO: write config file
+
+Create file `/etc/wpa_supplicant/wpa_supplicant.conf`:
+```conf
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+```
+then:
 ```
 sudo wpa_supplicant -B -i wlo1 -c /etc/wpa_supplicant/wpa_supplicant.conf
 ```
@@ -95,7 +102,8 @@ sudo wpa_cli
 > set_network <x> eap PEAP
 > set_network <x> identity "username"
 > set_network <x> password "password"
-
+> save_config
+> enable_network <x>
 ```
 
 
