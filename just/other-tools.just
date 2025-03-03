@@ -36,15 +36,5 @@ spotify: curl
 	sudo apt -y update && sudo apt install spotify-client
 
 [private]
-thunderbird:
+thunderbird: flatpak
 	flatpak install flathub org.mozilla.Thunderbird
-
-# insatll xplr: terminal file explorer
-[private]
-xplr: rustup
-	#!/usr/bin/env bash
-	set -euxo pipefail
-
-	. "$HOME/.cargo/env"
-	cargo install --locked --force xplr
-

@@ -9,7 +9,7 @@ import "install-tools.just"
 
 # main recipe of this justfile
 [private]
-base-tools: update xorg i3 nerdfont alsa pulseaudio 
+base-tools: update xorg i3 nautilus nerdfont nmtui alsa pulseaudio
 
 
 # install alsa: provides audio drivers
@@ -48,6 +48,11 @@ i3: cmake xorg (configure "i3" "picom" "polybar") mktmpdir && rmtmpdir
 
 	popd
 
+# install nautilus gui file explorer
+[private]
+nautilus:
+	sudo apt install -y nautilus
+
 # install nerdfont
 [private]
 nerdfont: unzip (configure "fontconfig")
@@ -56,6 +61,11 @@ nerdfont: unzip (configure "fontconfig")
 
 	# provides support for emojis
 	sudo apt install  fonts-noto-color-emoji
+
+# install network manager tui
+[private]
+nmtui:
+	sudo apt install -y network-manager
 
 # install pulseaudio: sound manager
 [private]
