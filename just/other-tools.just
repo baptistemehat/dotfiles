@@ -6,7 +6,17 @@ import "install-tools.just"
 
 # install non-dev tools (web browser, podf viewer, etc.)
 [private]
-other-tools: update evince firefox gimp keepassxc spotify thunderbird xplr 
+other-tools: update element evince firefox gimp keepassxc spotify thunderbird
+
+# install element desktop: matrix client
+[private]
+element:
+	#!/usr/bin/env bash
+	sudo apt install -y wget apt-transport-https
+	sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
+	echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
+	sudo apt update
+	sudo apt install -y element-desktop
 
 # install evince: pdf viewer
 [private]
