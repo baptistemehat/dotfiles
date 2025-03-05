@@ -6,7 +6,7 @@ import "install-tools.just"
 
 # install non-dev tools (web browser, podf viewer, etc.)
 [private]
-other-tools: update element evince firefox gimp keepassxc spotify thunderbird
+other-tools: update element evince firefox gimp keepassxc spotify thunderbird notion
 
 # install element desktop: matrix client
 [private]
@@ -37,6 +37,11 @@ gimp:
 [private]
 keepassxc:
 	sudo apt install -y keepassxc
+
+# install notion desktop
+[private]
+notion: snap
+	sudo snap install notion-desktop
 
 # install spotify: music service
 [private]

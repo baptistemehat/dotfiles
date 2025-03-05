@@ -63,6 +63,12 @@ python-venv:
 rustup: curl
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# install snap: package manager
+[private]
+snap:
+	sudo apt install -y snapd
+	sudo snap install snapd
+
 # install stow: symlink manager
 [private]
 stow:
