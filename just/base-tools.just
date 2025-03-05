@@ -9,13 +9,18 @@ import "install-tools.just"
 
 # main recipe of this justfile
 [private]
-base-tools: update xorg i3 nautilus nerdfont nmtui alsa pulseaudio
+base-tools: update xorg i3 nautilus nerdfont nmtui alsa pulseaudio arandr
 
 
 # install alsa: provides audio drivers
 [private]
 alsa:
 	sudo apt install -y alsa-tools
+
+# install arandr: ui for xrandr
+[private]
+arandr: xorg
+	sudo apt install -y arandr
 
 # install i3 environment: i3 window manager, polybar status bar, feh wallpaper manager, picom compositor, i3lock lock screen
 [private]
