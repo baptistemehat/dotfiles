@@ -60,12 +60,16 @@ nautilus:
 
 # install nerdfont
 [private]
-nerdfont: unzip (configure "fontconfig")
+nerdfont: unzip mktmpdir && rmtmpdir
 	#!/usr/bin/env bash
 	set -euxo pipefail
 
-	# provides support for emojis
-	sudo apt install  fonts-noto-color-emoji
+	pushd {{tmpdir}}
+	curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hack.zip"
+	mkdir -p  "$HOME/.fonts"
+	unzip "Hack.zip" -d "$HOME/.fonts/Hack/"
+	fc-cache -fv
+	popd {{tmpdir}}
 
 # install network manager tui
 [private]
