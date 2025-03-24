@@ -2,6 +2,9 @@
 	ui = always
 [core]
 	editor = vim
+[diff]
+	tool = nvimdiff
+	guitool = nvimdiff
 [format]
 	pretty = oneline
 [init]
@@ -10,7 +13,10 @@
 	decorate = short
 	abbrevCommit = true
 [merge]
+	tool = nvimdiff
     conflictstyle = diff3
+[mergetool "nvimdiff"]
+	layout = "LOCAL,BASE,REMOTE / MERGED"
 [pager]
     log=false
 [status]
