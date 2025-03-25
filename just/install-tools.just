@@ -37,7 +37,7 @@ git: (configure "git")
 	sudo apt install -y git
 
 # install nvm: node version manager providing nodejs and npm
-[private]
+# [private]
 nvm:
     #!/usr/bin/env bash
     set -euxo pipefail

@@ -131,6 +131,16 @@ return require('packer').startup(function(use)
 	use 'ThePrimeagen/vim-be-good'
 
 
+	use({
+		"olimorris/codecompanion.nvim",
+		config = function()
+			require("codecompanion").setup()
+		end,
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		}
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

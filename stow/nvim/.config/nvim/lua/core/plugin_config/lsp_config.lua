@@ -122,7 +122,30 @@ require('lspconfig').lua_ls.setup({
 lspconfig.marksman.setup {}
 
 -- PYTHON
-lspconfig.pylsp.setup {}
+lspconfig.pylsp.setup {
+	-- settings = {
+	-- 	pylsp = {
+	-- 		plugins = {
+	-- 			-- formatter options
+	-- 			black = { enabled = true },
+	-- 			autopep8 = { enabled = false },
+	-- 			yapf = { enabled = false },
+	-- 			-- linter options
+	-- 			pylint = { enabled = false, executable = "pylint" },
+	-- 			pyflakes = { enabled = false },
+	-- 			pycodestyle = { enabled = false },
+	-- 			pydocstyle = { enabled = false },
+	-- 			-- type checker
+	-- 			pylsp_mypy = { enabled = true },
+	-- 			-- auto-completion options
+	-- 			jedi_completion = { fuzzy = true },
+	-- 			-- import sorting
+	-- 			pyls_isort = { enabled = true },
+	-- 		},
+	-- 	},
+	-- },
+}
+
 
 -- RUST
 lspconfig.rust_analyzer.setup({
