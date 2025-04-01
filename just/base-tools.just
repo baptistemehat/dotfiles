@@ -9,7 +9,7 @@ import "install-tools.just"
 
 # main recipe of this justfile
 [private]
-base-tools: update xorg i3 nautilus nerdfont nmtui alsa pulseaudio arandr
+base-tools: update xorg i3 notify_send nautilus nerdfont nmtui alsa pulseaudio arandr
 
 
 # install alsa: provides audio drivers
@@ -21,6 +21,11 @@ alsa:
 [private]
 arandr: xorg
 	sudo apt install -y arandr
+
+# install notify-send
+[private]
+notify_send: xorg
+	sudo apt install -y dbus-x11 libnotify-bin
 
 # install i3 environment: i3 window manager, polybar status bar, feh wallpaper manager, picom compositor, i3lock lock screen
 [private]
