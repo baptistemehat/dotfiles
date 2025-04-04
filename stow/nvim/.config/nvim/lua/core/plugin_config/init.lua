@@ -1,5 +1,6 @@
 require("core.plugin_config.autopairs")
 require("core.plugin_config.bufferline")
+require("core.plugin_config.code-companion")
 require("core.plugin_config.colorscheme")
 require("core.plugin_config.comment")
 require("core.plugin_config.completion")
@@ -12,4 +13,3 @@ require("core.plugin_config.telescope")
 require("core.plugin_config.toggleterm")
 require("core.plugin_config.treesitter")
 require("core.plugin_config.vimwiki")
-

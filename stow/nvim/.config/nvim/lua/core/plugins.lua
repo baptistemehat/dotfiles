@@ -131,11 +131,10 @@ return require('packer').startup(function(use)
 	use 'ThePrimeagen/vim-be-good'
 
 
+	-- CODED COMPANION
+	-- AI assistant
 	use({
 		"olimorris/codecompanion.nvim",
-		config = function()
-			require("codecompanion").setup()
-		end,
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",

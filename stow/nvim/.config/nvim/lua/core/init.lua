@@ -5,4 +5,3 @@ require('core.plugins')
 -- Otherwise they will use the default leader: backslash '\'
 require('core.plugin_config')
 require('core.options')
-
