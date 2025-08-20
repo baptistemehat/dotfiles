@@ -49,8 +49,8 @@ require("codecompanion").setup({
 				},
 				schema = {
 					model = {
-						default = "claude-3-5-haiku-20241022",
-						-- default = "claude-3-7-sonnet-20250219",
+						-- default = "claude-3-5-haiku-20241022",
+						default = "claude-3-7-sonnet-20250219",
 					},
 				},
 			})

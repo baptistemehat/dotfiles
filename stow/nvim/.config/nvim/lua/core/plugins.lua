@@ -32,11 +32,11 @@ return require('packer').startup(function(use)
 	-- Enable nvim to manage and talk to language servers
 	--
 	-- mason package manager for LSP, DAP, linters, etc.
-	use 'williamboman/mason.nvim'
+	use 'mason-org/mason.nvim'
 	-- ready-to-use configs for LSPs
 	use 'neovim/nvim-lspconfig'
 	-- make mason and lsp-config work together
-	use 'williamboman/mason-lspconfig.nvim'
+	use 'mason-org/mason-lspconfig.nvim'
 
 
 	-- COMPLETION TOOLS
