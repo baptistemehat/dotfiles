@@ -3,5 +3,12 @@
 #     MONITOR=$m polybar --config=~/.config/polybar/config.ini --reload toph &
 #   done
 # else
-  polybar --config=~/.config/polybar/config.ini --reload toph &
+  # polybar --config=~/.config/polybar/config.ini --reload toph &
 # fi
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload toph &
+  done
+else
+  polybar --config=~/.config/polybar/config.ini --reload toph &
+fi

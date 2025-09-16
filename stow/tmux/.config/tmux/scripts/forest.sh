@@ -3,8 +3,8 @@
 main() {
 
     if  ! command -v forest > /dev/null; then
-        printf "⌛ "
-        printf "forest not installed"
+        # printf "⌛ "
+        # printf "forest not installed"
         return
     fi
 
