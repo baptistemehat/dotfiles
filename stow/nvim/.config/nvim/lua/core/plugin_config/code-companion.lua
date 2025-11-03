@@ -41,19 +41,21 @@ require("codecompanion").setup({
 		},
 	},
 	adapters = {
-		anthropic = function()
-			return require("codecompanion.adapters").extend("anthropic", {
-				env = {
-					api_key =
-					"cmd:cat ~/private-dotfiles/apikeys/anthropic.key",
-				},
-				schema = {
-					model = {
-						-- default = "claude-3-5-haiku-20241022",
-						default = "claude-3-7-sonnet-20250219",
+		http = {
+			anthropic = function()
+				return require("codecompanion.adapters").extend("anthropic", {
+					env = {
+						api_key =
+						"cmd:cat ~/private-dotfiles/apikeys/anthropic.key",
 					},
-				},
-			})
-		end,
+					schema = {
+						model = {
+							-- default = "claude-3-5-haiku-20241022",
+							default = "claude-3-7-sonnet-20250219",
+						},
+					},
+				})
+			end,
+		}
 	},
 })

@@ -1,4 +1,4 @@
-local lspconfig = require('lspconfig')
+local lspconfig = vim.lsp.config
 
 -- MASON
 -- Package manager for language servers, debugger adapters, linters, etc.
@@ -14,7 +14,6 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	-- List of language servers I want to be installed by default
 	ensure_installed = {
-		"ansiblels",
 		"bashls",
 		"clangd",
 		"cmake",
@@ -27,8 +26,6 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"marksman",
 		"pylsp",
-		-- "ruff",
-		"ruff_lsp",
 		"rust_analyzer",
 		"sqlls",
 		"ts_ls",
@@ -73,41 +70,38 @@ cmp.setup({
 -- LANGUAGE SERVER CONFIGURATIONS --
 --
 
--- ANSIBLE
-lspconfig.ansible.setup {}
-
 -- BASH
-lspconfig.bashls.setup {}
+lspconfig.bashls = {}
 
 -- C/C++
-lspconfig.clangd.setup {
+lspconfig.clangd = {
 	capabilities = capabilities,
 	cmd = { 'clangd', '--background-index', '-j', '6', '--clang-tidy', '--clang-tidy-checks=modernize-*,-modernize-use-trailing-return-type', '--limit-results=0' },
 }
 
 -- CMake
-lspconfig.cmake.setup {}
+lspconfig.cmake = {}
 
 -- CSS
-lspconfig.cssls.setup {}
+lspconfig.cssls = {}
 
 -- DOCKERFILE
-lspconfig.dockerls.setup {}
+lspconfig.dockerls = {}
 
 -- JAVA
-lspconfig.jdtls.setup {}
+lspconfig.jdtls = {}
 
 -- GO
--- lspconfig.gopls.setup {}
+-- lspconfig.gopls = {}
 
 -- HTLM
-lspconfig.html.setup {}
+lspconfig.html = {}
 
 -- JSON
-lspconfig.jsonls.setup {}
+lspconfig.jsonls = {}
 
 -- LUA
-require('lspconfig').lua_ls.setup({
+lspconfig.lua_ls =({
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -119,10 +113,10 @@ require('lspconfig').lua_ls.setup({
 })
 
 -- MARKDOWN
-lspconfig.marksman.setup {}
+lspconfig.marksman = {}
 
 -- PYTHON
-lspconfig.pylsp.setup {
+lspconfig.pylsp = {
 	settings = {
 		pylsp = {
 			configurationSources = { 'pylint' },
@@ -154,7 +148,7 @@ lspconfig.pylsp.setup {
 
 
 -- RUST
-lspconfig.rust_analyzer.setup({
+lspconfig.rust_analyzer =({
 	settings = {
 		["rust-analyzer"] = {
 			imports = {
@@ -179,13 +173,13 @@ lspconfig.rust_analyzer.setup({
 })
 
 -- SQL
-lspconfig.sqlls.setup {}
+lspconfig.sqlls = {}
 
 -- JS/TS
-lspconfig.ts_ls.setup {}
+lspconfig.ts_ls = {}
 
 -- YAML
-lspconfig.yamlls.setup {}
+lspconfig.yamlls = {}
 
 
 -- Enable filetype detection for custom java-based educational programming language
