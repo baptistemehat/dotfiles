@@ -1,0 +1,39 @@
+\mode<presentation>
+
+% ================================================================================
+% change fonts
+% ================================================================================
+
+% switch default to Fira Sans
+\usepackage[sfdefault]{FiraSans}
+\renewcommand*\oldstylenums[1]{{\firaoldstyle #1}}
+
+% switch monospace to Latin Modern
+\usepackage{lmodern}
+
+
+% ================================================================================
+% fine-tune font design
+% ================================================================================
+
+% outer frame
+\setbeamerfont*{tiny structure}{size=\tiny,series=\bfseries}
+\setbeamerfont*{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont*{framesubtitle}{parent=frametitle,size=\normalsize}
+\setbeamerfont*{footline}{parent=tiny structure,size=\footnotesize}
+\setbeamerfont*{page number in head/foot}{parent=footline,size=\small}
+
+% inner frame
+\setbeamerfont*{structure}{size=\normalsize,series=\bfseries}
+\setbeamerfont*{block title}{size=\normalsize,series=\bfseries}
+\setbeamerfont*{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont*{itemize/enumerate subbody}{size=\small}
+\setbeamerfont*{itemize/enumerate subsubbody}{size=\small}
+
+% title page
+\setbeamerfont*{author}{size=\normalsize}
+\setbeamerfont*{institute}{parent=author}
+\setbeamerfont*{date}{parent=author}
+\setbeamerfont*{titlegraphic}{parent=author}
+
+\mode<all>

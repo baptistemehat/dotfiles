@@ -1,0 +1,64 @@
+\mode<presentation>
+
+% ================================================================================
+% define base colours
+% ================================================================================
+
+\definecolor{lapisBlue}{HTML}{1259A1}  % rgb( 18, 89,161) hsl(210,80%,35%)
+\definecolor{skyBlue}{HTML}{19B3E6}    % rgb( 25,179,230) hsl(195,80%,50%)
+\definecolor{aquaGreen}{HTML}{88D8C0}  % rgb(136,216,192) hsl(162,51%,69%)
+\definecolor{appleGreen}{HTML}{66B447} % rgb(102,180, 71) hsl(103,43%,49%)
+
+\definecolor{teaBrown}{HTML}{826B58}     % rgb(130,107, 88) hsl( 27,19%,43%)
+\definecolor{crimsonRed}{HTML}{E8000D}   % rgb(232,  0, 13) hsl(357,100%,45%)
+\definecolor{vividOrange}{HTML}{FF9900}  % rgb(255,153,  0) hsl( 36,100%,50%)
+\definecolor{goldenYellow}{HTML}{FFD700} % rgb(255,215,  0) hsl( 51,100%,50%)
+
+\definecolor{lavenderPurple}{HTML}{967BB6} % rgb(150,123,182) hsl(267,29%,60%)
+\definecolor{wisteriaViolet}{HTML}{BB7796} % rgb(187,119,150) hsl(333,33%,60%)
+\definecolor{cherryPink}{HTML}{F7BAD9}     % rgb(247,186,217) hsl(330,79%,85%)
+
+\definecolor{inkBlack}{HTML}{393432}     % rgb( 57, 52, 50) hsl( 17, 7%,21%)
+\definecolor{steelGray}{HTML}{6A7F7A}    % rgb(106,127,122) hsl(166, 9%,46%)
+\definecolor{ashGray}{HTML}{B2BEB5}      % rgb(178,190,181) hsl(135, 8%,72%)
+\definecolor{penguinWhite}{HTML}{F5F3EF} % rgb(245,243,239) hsl( 40,23%,95%)
+
+% duplicates
+\definecolor{steelGrey}{HTML}{6A7F7A}
+\definecolor{ashGrey}{HTML}{B2BEB5}
+
+
+% ================================================================================
+%  fine-tune colour design
+% ================================================================================
+
+% accent colour
+\setbeamercolor{structure}{fg=lapisBlue}
+
+% main palette
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!80!black}
+\setbeamercolor*{palette tertiary}{fg=steelGray}
+\setbeamercolor*{palette quaternary}{fg=inkBlack}
+
+% outer frame
+\setbeamercolor*{titlelike}{parent=palette primary}
+\setbeamercolor*{frametitle}{parent=palette primary}
+\setbeamercolor*{framesubtitle}{parent=palette secondary}
+\setbeamercolor*{footline}{parent=palette quaternary}
+\setbeamercolor*{page number in head/foot}{parent=palette tertiary}
+
+% inner frame
+\setbeamercolor{block title}{use=palette primary,fg=white,bg=palette primary.fg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!10!bg}
+
+% title page
+\setbeamercolor*{title}{parent=palette primary}
+\setbeamercolor*{subtitle}{parent=title}
+\setbeamercolor*{author}{parent=palette quaternary}
+\setbeamercolor*{institute}{parent=author}
+\setbeamercolor*{date}{parent=author}
+\setbeamercolor*{titlegraphic}{parent=author}
+
+
+\mode<all>

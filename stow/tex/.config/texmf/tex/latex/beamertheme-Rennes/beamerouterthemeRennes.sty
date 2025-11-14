@@ -1,0 +1,69 @@
+\mode<presentation>
+
+\usepackage{appendixnumberbeamer} % reset frame counter in appendix
+
+% ================================================================================
+%  footline
+% ================================================================================
+
+% remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+\def\myfootline{}
+\def\myleftlogo{}
+\def\myrightlogo{}
+\newcommand{\setfootline}[1]{\gdef\myfootline{#1}}
+\newcommand{\setleftlogo}[1]{\gdef\myleftlogo{#1}}
+\newcommand{\setrightlogo}[1]{\gdef\myrightlogo{#1}}
+
+\newlength{\myfootlinewidth} % private
+
+\setbeamertemplate{footline}{%
+  \setbox0=\hbox{
+    \usebeamerfont{footline}%
+    \leavevmode%
+    \ifx\myleftlogo\@empty\kern1em\else\myleftlogo\kern1.5em\fi%
+    \ifx\myrightlogo\@empty\kern1em\else\myrightlogo\kern1.5em\fi%
+    \kern0.5em%
+    \usebeamertemplate*{page number in head/foot}%
+  }
+  \usebeamerfont{footline}%
+  \leavevmode%
+  \ifx\myleftlogo\@empty\kern1em\else%
+  \kern0.75em\raisebox{0pt}[0pt][0pt]{\myleftlogo}\kern0.75em\fi%
+  \setlength{\myfootlinewidth}{\dimexpr(\paperwidth-\wd0)}%
+  \raisebox{0pt}[0pt][0pt]{\rlap{\parbox[b]{\myfootlinewidth}{\everypar{\strut}\myfootline}}}%
+  \hfill%
+  \kern0.5em%
+  \raisebox{0pt}[0pt][0pt]{\usebeamertemplate*{page number in head/foot}}%
+  \usebeamerfont{text in head/foot}%
+  \ifx\myrightlogo\@empty\kern1em\else%
+  \kern0.75em\raisebox{0pt}[0pt][0pt]{\myrightlogo}\kern0.75em\fi%
+  \vskip1.4ex% v2pt
+}
+
+% add "+" before appendix frame numbers ; empty with option [noframenumbering]
+\makeatletter
+\setbeamertemplate{page number in head/foot}{%
+  \ifbeamer@noframenumbering\else%
+  \ifbeamer@inappendix\texttt{+}\fi%
+  \insertframenumber%
+  \ifnum\beamer@slideinframe>1 $\boldsymbol{\cdot}$\number\beamer@slidenumber\fi%
+  \fi
+}
+\makeatother
+
+% reset the footline each new frame
+\let\oldframe\frame
+\def\frame{\setfootline{}\oldframe}
+
+
+% ================================================================================
+%  misc
+% ================================================================================
+
+\setbeamersize{text margin left=3em}
+\setbeamersize{text margin right=3em}
+
+
+\mode<all>

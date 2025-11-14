@@ -1,0 +1,230 @@
+\mode<presentation>
+
+% ================================================================================
+%  title page
+% ================================================================================
+
+\defbeamertemplate*{author}{rennes}[1][]{%
+  \begin{beamercolorbox}[sep=2pt,center,#1]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{institute}{rennes}[1][]{%
+  \begin{beamercolorbox}[sep=2pt,center,#1]{institute}
+    \usebeamerfont{institute}\insertinstitute
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{date}{rennes}[1][]{%
+    \begin{beamercolorbox}[sep=2pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{title page}{rennes}[1][]{%
+  \vbox{}
+  \vfill
+  \vskip6ex\par
+  \begingroup
+    \centering
+    \usebeamertemplate{title}
+    \vskip1.5ex\par
+    \usebeamertemplate{author}
+    \usebeamertemplate{institute}
+    \usebeamertemplate{date}
+    \vskip1.5ex\par
+    \usebeamertemplate{titlegraphic}
+  \endgroup
+  \vfill
+}
+
+
+% ================================================================================
+%  accents
+% ================================================================================
+
+\newenvironment<>{accentenv}{\begin{altenv}#1%
+    {\usebeamercolor[fg]{accented text}\usebeamerfont{accented text}\usebeamertemplate{accented text begin}}
+    {\usebeamertemplate{accented text end}}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{warnenv}{\begin{altenv}#1%
+    {\usebeamercolor[fg]{warned text}\usebeamerfont{warned text}\usebeamertemplate{warned text begin}}
+    {\usebeamertemplate{warned text end}}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{infoenv}{\begin{altenv}#1%
+    {\usebeamercolor[fg]{infoed text}\usebeamerfont{infoed text}\usebeamertemplate{infoed text begin}}
+    {\usebeamertemplate{infoed text end}}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{subtleenv}{\begin{altenv}#1%
+    {\usebeamercolor[fg]{subtled text}\usebeamerfont{subtled text}\usebeamertemplate{subtled text begin}}
+    {\usebeamertemplate{subtled text end}}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{shadeenv}{\begin{altenv}#1%
+    {\usebeamercolor[fg]{shaded text}\usebeamerfont{shaded text}\usebeamertemplate{shaded text begin}}
+    {\usebeamertemplate{shaded text end}}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+
+\renewcommand<>{\alert}[1]{\begin{alertenv}#2\relax#1\end{alertenv}}
+\newcommand<>{\accent}[1]{\begin{accentenv}#2\relax#1\end{accentenv}}
+\newcommand<>{\warn}[1]{\begin{warnenv}#2\relax#1\end{warnenv}}
+\newcommand<>{\info}[1]{\begin{infoenv}#2\relax#1\end{infoenv}}
+\newcommand<>{\subtle}[1]{\begin{subtleenv}#2\relax#1\end{subtleenv}}
+\newcommand<>{\shade}[1]{\begin{shadeenv}#2\relax#1\end{shadeenv}}
+
+\newenvironment<>{alertedenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=alerted text,fg=alerted text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{accentedenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=accented text,fg=accented text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{warnedenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=warned text,fg=warned text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{infoedenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=infoed text,fg=infoed text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{subtledenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=subtled text,fg=subtled text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+\newenvironment<>{shadedenv}{\begin{altenv}#1%
+    {\setbeamercolor{structure}{use=shaded text,fg=shaded text.fg}}
+    {}{\color{.}}{}\ignorespaces}{\ifhmode\unskip\fi\end{altenv}}
+
+\newcommand<>{\alerted}[1]{\begin{alertedenv}#2\relax#1\end{alertedenv}}
+\newcommand<>{\accented}[1]{\begin{accentedenv}#2\relax#1\end{accentedenv}}
+\newcommand<>{\warned}[1]{\begin{warnedenv}#2\relax#1\end{warnedenv}}
+\newcommand<>{\infoed}[1]{\begin{infoedenv}#2\relax#1\end{infoedenv}}
+\newcommand<>{\subtled}[1]{\begin{subtledenv}#2\relax#1\end{subtledenv}}
+\newcommand<>{\shaded}[1]{\begin{shadedenv}#2\relax#1\end{shadedenv}}
+
+\setbeamercolor{accented text}{use=structure,fg=structure.fg}
+\setbeamercolor{alerted text}{fg=crimsonRed}
+\setbeamercolor{warned text}{fg=vividOrange}
+\setbeamercolor{infoed text}{fg=appleGreen}
+\setbeamercolor{subtled text}{fg=lavenderPurple}
+\setbeamercolor{shaded text}{fg=steelGray}
+
+
+% ================================================================================
+%  structure
+% ================================================================================
+
+% blocks
+
+\defbeamertemplate*{block begin}{rennes}{
+  \begin{beamercolorbox}[colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title}{%
+  }{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+
+%% \defbeamertemplate*{block end}{rennes}{%
+%%   \end{beamercolorbox}\vskip\smallskipamount%
+%% }
+
+
+% structured paragraph
+
+\newenvironment<>{structured}[2]{%
+    \def\insertparaname{#1}%
+    \def\insertparafirstline{#2}%
+    \usebeamertemplate{structured begin}#3}{%
+  \usebeamertemplate{structured end}}
+
+\defbeamertemplate*{structured begin}{default}{%
+  \begingroup%
+  \structure{\insertparaname}~\insertparafirstline\par}
+\defbeamertemplate*{structured end}{default}{%
+  \endgroup\par}
+
+\newcommand<>{\structuredoneline}[2]{\begingroup\usebeamertemplate{structured begin}\structure{#1}~#2\par}
+
+
+% itemize
+
+\settowidth{\leftmargini}{\usebeamertemplate{itemize subitem}}
+\addtolength{\leftmargini}{\labelsep}
+\settowidth{\leftmarginii}{\usebeamertemplate{itemize subitem}}
+\addtolength{\leftmarginii}{\labelsep}
+\settowidth{\leftmarginiii}{\usebeamertemplate{itemize subsubitem}}
+\addtolength{\leftmarginiii}{\labelsep}
+
+\setlength\topsep{0pt}
+\setlength\partopsep{0pt}
+\setlength\itemsep{0pt}
+
+\renewcommand{\itemize}[1][]{%
+  \ifblank{#1}{}{\def\beamer@defaultospec{#1}}%
+  \ifnum \@itemdepth >2\relax\@toodeep\else
+    \advance\@itemdepth\@ne
+    \beamer@computepref\@itemdepth% sets \beameritemnestingprefix
+    \usebeamerfont{itemize/enumerate \beameritemnestingprefix body}%
+    \usebeamercolor[fg]{itemize/enumerate \beameritemnestingprefix body}%
+    \usebeamertemplate{itemize/enumerate \beameritemnestingprefix body begin}%
+    \list
+      {\usebeamertemplate{itemize \beameritemnestingprefix item}}
+      {%
+        \setlength\topsep{0pt}% NEW
+        \setlength\partopsep{0pt}% NEW
+        \setlength\itemsep{0pt}% NEW
+        \def\makelabel##1{%
+          {%
+            \hss\llap{{%
+                \usebeamerfont*{itemize \beameritemnestingprefix item}%
+                \usebeamercolor[fg]{itemize \beameritemnestingprefix item}##1}}%
+          }%
+        }%
+      }
+  \fi%
+  \beamer@cramped%
+  \raggedright%
+  \beamer@firstlineitemizeunskip%
+}
+
+
+% twocolumns/threecolumns
+
+\newlength{\mycolumnlen} % private
+\newlength{\twocolumnsep}
+\newlength{\threecolumnsep}
+\setlength{\twocolumnsep}{2em}
+\setlength{\threecolumnsep}{2em}
+
+\newcommand{\twocolumns}[4][c]{%
+  \hbox{%
+    \setlength{\mycolumnlen}{\dimexpr(\textwidth-\twocolumnsep)}%
+    \begin{columns}[onlytextwidth,#1]%
+      \column{\dimexpr(#2\mycolumnlen)}#3%
+      %% \column{\twocolumnsep}%
+      \column{\dimexpr(\mycolumnlen-#2\mycolumnlen)}#4%
+    \end{columns}%
+  }
+}
+
+\newcommand{\threecolumns}[6][c]{%
+  \hbox{%
+    \setlength{\mycolumnlen}{\dimexpr(\textwidth-2\twocolumnsep)}%
+    \begin{columns}[onlytextwidth,#1]
+      \column{#2\mycolumnlen}#4%
+      %% \column{\twocolumnsep}%
+      \column{#3\mycolumnlen}#5%
+      %% \column{\twocolumnsep}%
+      \column{\dimexpr(\mycolumnlen-#2\mycolumnlen-#3\mycolumnlen)}#6%
+    \end{columns}
+  }
+}
+
+
+% ================================================================================
+%  misc
+% ================================================================================
+
+\newcommand{\oneline}[1]{\makebox[\linewidth][l]{#1}}
+
+\newcommand{\centered}[1]{{\makebox[\textwidth][c]{#1}\par}}
+
+\newcommand{\autoskip}{\vskip 4pt plus 1fill minus 2pt}
+
+
+\mode<all>
