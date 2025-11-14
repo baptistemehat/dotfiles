@@ -45,7 +45,8 @@ fzf:
 
 # list of dependencies for the treesitter nvim plugin
 [private]
-nvim-treesitter-dependencies: nvm python-venv
+nvim-treesitter-dependencies: nvm python-venv rustup
+	cargo install tree-sitter-cli
 
 # install nvim: vim-based code editor
 [private]

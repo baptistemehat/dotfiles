@@ -23,6 +23,7 @@ require("mason-lspconfig").setup({
 		-- "gopls",
 		"html",
 		"jsonls",
+		"ltex_plus",
 		"lua_ls",
 		"marksman",
 		"pylsp",
@@ -112,8 +113,11 @@ lspconfig.lua_ls =({
 	}
 })
 
+-- LATEX, MARKDOWN
+lspconfig.ltex_plus = {}
+
 -- MARKDOWN
-lspconfig.marksman = {}
+-- lspconfig.marksman = {}
 
 -- PYTHON
 lspconfig.pylsp = {
