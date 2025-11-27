@@ -29,6 +29,7 @@ require("mason-lspconfig").setup({
 		"pylsp",
 		"rust_analyzer",
 		"sqlls",
+		"taplo",
 		"ts_ls",
 		"yamlls",
 	}
@@ -178,6 +179,9 @@ lspconfig.rust_analyzer =({
 
 -- SQL
 lspconfig.sqlls = {}
+
+-- TOML
+lspconfig.taplo = {}
 
 -- JS/TS
 lspconfig.ts_ls = {}
