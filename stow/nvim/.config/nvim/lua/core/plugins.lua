@@ -23,9 +23,9 @@ return require('packer').startup(function(use)
 	-- Parser providing better syntax highlight, indent, folding on current buffer
 	--
 	-- treesitter
-	use 'nvim-treesitter/nvim-treesitter'
-	-- playground to display treesitter AST
-	use 'nvim-treesitter/playground'
+	use { 'nvim-treesitter/nvim-treesitter', branch = "main" }
+	-- -- playground to display treesitter AST
+	-- use 'nvim-treesitter/playground'
 
 
 	-- LANGUAGE SERVER

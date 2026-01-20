@@ -16,6 +16,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"bashls",
 		"clangd",
+		"clang-format",
 		"cmake",
 		"cssls",
 		"dockerls",
@@ -78,9 +79,13 @@ lspconfig.bashls = {}
 -- C/C++
 lspconfig.clangd = {
 	capabilities = capabilities,
-	cmd = { 'clangd', '--background-index', '-j', '6', '--clang-tidy', '--clang-tidy-checks=modernize-*,-modernize-use-trailing-return-type', '--limit-results=0' },
+	cmd = { 'clangd', '--background-index', '-j', '2', '--clang-tidy', '--clang-tidy-checks=modernize-*,-modernize-use-trailing-return-type', '--limit-results=0' },
 }
 
+lspconfig.clang_format = {
+	capabilities = capabilities,
+	cmd = { 'clangd', '--background-index', '-j', '2', '--clang-tidy', '--clang-tidy-checks=modernize-*,-modernize-use-trailing-return-type', '--limit-results=0' },
+}
 -- CMake
 lspconfig.cmake = {}
 
