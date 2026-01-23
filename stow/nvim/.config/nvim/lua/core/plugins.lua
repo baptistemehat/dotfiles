@@ -60,12 +60,16 @@ return require('packer').startup(function(use)
 	-- telescope
 	use({
 		'nvim-telescope/telescope.nvim',
-		tag = '0.1.8',
-		requires = { { 'nvim-lua/plenary.nvim' } }
+		-- version = '*',
+		tag = 'v0.2.1',
+		requires = {
+			{ 'nvim-lua/plenary.nvim' },
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+		}
 	})
 	-- telescope fzf for better search performances
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run =
-	'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+	-- use { 'nvim-telescope/telescope-fzf-native.nvim', run =
+	-- 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 
 	-- UNDO TREE
