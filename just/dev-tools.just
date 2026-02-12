@@ -10,7 +10,7 @@ import "base-tools.just"
 
 # main recipe of this justfile
 [private]
-dev-tools: update alacritty fzf zsh nvim tmux
+dev-tools: update alacritty asciinema fzf zsh nvim tmux
 
 # install alacritty: terminal emulator
 [private]
@@ -31,6 +31,10 @@ alacritty: rustup (configure "alacritty") mktmpdir && rmtmpdir
     sudo cp target/release/alacritty /usr/local/bin
 
     popd
+
+[private]
+asciinema: update
+	sudo apt install -y asciinema
 
 # install fzf: fuzzy finder
 [private]

@@ -57,14 +57,15 @@ return require('packer').startup(function(use)
 	-- Multi-purpose Fuzzy finder
 	-- Can search for filenames, lsp symbols, git commits, etc.
 	--
+	-- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' }
 	-- telescope
 	use({
 		'nvim-telescope/telescope.nvim',
-		-- version = '*',
+		version = '*',
 		tag = 'v0.2.1',
 		requires = {
 			{ 'nvim-lua/plenary.nvim' },
-			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install' },
 		}
 	})
 	-- telescope fzf for better search performances
